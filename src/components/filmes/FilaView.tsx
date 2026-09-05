@@ -85,30 +85,33 @@ export function FilaView({
   return (
     <View className="flex-1 bg-background">
       <View className="gap-2 p-4 pb-2">
+        <TextInput
+          value={busca}
+          onChangeText={setBusca}
+          placeholder="Buscar na fila..."
+          placeholderTextColor="#737373"
+          className="rounded-md border border-border px-3 py-2.5 text-sm text-foreground"
+        />
         <View className="flex-row gap-2">
-          <TextInput
-            value={busca}
-            onChangeText={setBusca}
-            placeholder="Buscar na fila..."
-            placeholderTextColor="#737373"
-            className="flex-1 rounded-md border border-border px-3 py-2.5 text-sm text-foreground"
-          />
+          <View className="flex-1">
+            <FormSelect
+              label=""
+              value={ordenar}
+              onChange={(v) => setOrdenar(v as Ordenacao)}
+              options={ORDENAR_OPCOES}
+            />
+          </View>
           {mostrarRoleta && (
             <Pressable
               onPress={() => setRoletaAberta(true)}
               disabled={filmes.length === 0}
-              className="items-center justify-center rounded-md border border-border px-3.5 disabled:opacity-40"
+              className="flex-row items-center gap-1.5 rounded-md border border-border bg-card px-3.5 disabled:opacity-40"
             >
               <Text className="text-base">🎲</Text>
+              <Text className="text-sm font-semibold text-foreground">Sortear</Text>
             </Pressable>
           )}
         </View>
-        <FormSelect
-          label=""
-          value={ordenar}
-          onChange={(v) => setOrdenar(v as Ordenacao)}
-          options={ORDENAR_OPCOES}
-        />
         <Text className="text-xs text-muted-foreground">{legenda}</Text>
       </View>
 
