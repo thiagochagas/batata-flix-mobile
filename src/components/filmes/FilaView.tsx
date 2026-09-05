@@ -92,7 +92,7 @@ export function FilaView({
           placeholderTextColor="#737373"
           className="rounded-md border border-border px-3 py-2.5 text-sm text-foreground"
         />
-        <View className="flex-row gap-2">
+        <View className="flex-row items-end gap-2">
           <View className="flex-1">
             <FormSelect
               label=""
@@ -105,7 +105,7 @@ export function FilaView({
             <Pressable
               onPress={() => setRoletaAberta(true)}
               disabled={filmes.length === 0}
-              className="flex-row items-center gap-1.5 rounded-md border border-border bg-card px-3.5 disabled:opacity-40"
+              className="flex-row items-center gap-1.5 rounded-md border border-border bg-card px-3.5 py-2.5 disabled:opacity-40"
             >
               <Text className="text-base">🎲</Text>
               <Text className="text-sm font-semibold text-foreground">Sortear</Text>

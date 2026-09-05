@@ -52,8 +52,8 @@ export function RouletteModal({
 
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
-      <View className="flex-1 items-center justify-center bg-black/60 px-6">
-        <View className="w-full max-w-sm items-center gap-4 rounded-2xl bg-card p-6">
+      <Pressable className="flex-1 items-center justify-center bg-black/60 px-6" onPress={onClose}>
+        <Pressable onPress={() => {}} className="w-full max-w-sm items-center gap-4 rounded-2xl bg-card p-6">
           <Text className="text-center text-lg font-bold text-foreground">
             {girando ? "🎲 Sorteando..." : filmes.length === 1 ? "🎲 Só tem esse mesmo!" : "🎲 O Batata escolheu!"}
           </Text>
@@ -88,8 +88,8 @@ export function RouletteModal({
               <Text className="text-sm font-medium text-white">🎬 Ver filme</Text>
             </Pressable>
           </View>
-        </View>
-      </View>
+        </Pressable>
+      </Pressable>
     </Modal>
   );
 }
